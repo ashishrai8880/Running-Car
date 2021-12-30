@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    overflow: hidden;
+}
+button{
+    height: 40px;
+    width: 64px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.sky{
+    height: 100vh;
+    width: 100%;
+    background-image: url(image/background.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.trees{
+    height: 100vh;
+    width: 100%;
+    background-image: url(image/trees.png);
+    background-size: cover; 
+    position: absolute;
+    top: -144px; 
+}
+.track{
+    height: 60vh;
+    width: 800vw;
+    background-image: url(image/track.png);
+    background-repeat: repeat-x; 
+    position: absolute;
+    top: 70vh;
+    animation-name: trackMove;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+}
+
+@keyframes trackMove {
+    
+    100%{
+        transform: translateX(-500vw);
+    }
+}
+
+.car{
+    height: 100px;
+    width: 380px;
+    background-image: url(image/car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 150px;
+    bottom:30vh;
+    animation-name: shakeCar ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    animation-name: forwBackward ;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    
+}
+.car2{
+    height: 100px;
+    width: 380px;
+    background-image: url(image/car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 250px;
+    bottom:20vh;
+    animation-name: shakeCar ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+    animation-name: forwBackward2 ;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    
+}
+
+@keyframes shakeCar {
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes forwBackward {
+    25%{
+        transform: translateX(20vw);
+    } 
+    50%{
+        transform: translateX(-20vw);
+    }   
+    75%{
+        transform: translateX(20vw);
+    }
+    100%{
+        transform: translateX(-20vw);
+    }
+}
+@keyframes forwBackward2 {
+    25%{
+        transform: translateX(-20vw);
+    } 
+    50%{
+        transform: translateX(20vw);
+    } 
+    75%{
+        transform: translateX(-20vw);
+
+    }  
+    100%{
+        transform: translateX(20vw);
+    }
+}
+.wheelLeft img{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 41px;
+    top: 42px;
+    animation-name: rotateWheel;
+    animation-duration: 0.15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.wheelRight img{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 233px;
+    top: -42px;
+    animation-name: rotateWheel;
+    animation-duration: .15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes rotateWheel {
+    100%{
+        transform: rotate(360deg);
+    }
+}
